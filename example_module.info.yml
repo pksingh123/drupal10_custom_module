@@ -1,0 +1,7 @@
+name: Custom Example Module
+type: module
+description: This module provide the example of custom implementation
+core_version_requirement: ^9 || ^10
+package: Custom Examples
+
+
