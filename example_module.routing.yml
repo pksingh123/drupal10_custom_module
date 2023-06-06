@@ -1,0 +1,133 @@
+# This won't work no matter what 
+example_module.node_options:
+  path: '/node/{node}/options'
+  defaults:
+    _form: '\Drupal\example_module\Form\ConfirmOptionsForm'
+  requirements:
+    _role: 'administrator+content_editor'
+  options:
+    parameters:
+      node:
+        type: 'entity:node'
+# This file brings everything together. Very nifty!
+
+# Route name can be used in sevaral place (links, redirects, local actions etc.)
+entity.dictionary_term.canonical:
+  path: '/dictionary_term/{dictionary_term}'
+  defaults:
+# Calls the view controller, defined in the annotation of the dictionary_term entity
+    _entity_view: 'dictionary_term'
+    _title: 'dictionary_term Content'
+  requirements:
+  # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'dictionary_term.view'
+entity.dictionary_term.collection:
+  path: '/dictionary_term/list'
+  defaults:
+    _entity_list: 'dictionary_term'
+    _title: 'Contact list'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'view dictionary_term entity'
+entity.dictionary.term_add:
+  path: '/dictionary_term/add'
+  defaults:
+# Calls the form.add controller, defined in the dictionary_term entity.
+    _entity_form: dictionary_term.add
+    _title: 'Add dictionary_term'
+  requirements:
+    _entity_create_access: 'dictionary_term'
+
+entity.dictionary_term.edit_form:
+  path: '/dictionary_term/{dictionary_term}/edit'
+  defaults:
+# Calls the form.edit controller, defined in the dictionary_term entity.
+    _entity_form: dictionary_term.edit
+    _title: 'Edit dictionary_term'
+  requirements:
+    _entity_access: 'dictionary_term.edit'
+
+entity.dictionary_term.delete_form:
+  path: '/dictionary_term/{dictionary_term}/delete'
+  defaults:
+  # Calls the form.delete controller, defined in the dictionary_term entity.
+    _entity_form: dictionary_term.delete
+    _title: 'Delete dictionary_term'
+  requirements:
+    _entity_access: 'dictionary_term.delete'
+
+entity.dictionary.term_settings:
+  path: 'admin/structure/dictionary_term_settings'
+  defaults:
+    _form: '\Drupal\example_module\Form\TermSettingsForm'
+    _title: 'dictionary_term Settings'
+  requirements:
+    _permission: 'administer dictionary_term entity'
+######## Advertiser Entity routs.###############
+# This file brings everything together. Very nifty!
+
+# Route name can be used in several places; e.g. links, redirects, and local
+# actions.
+entity.advertiser.canonical:
+  path: '/advertiser/{advertiser}'
+  defaults:
+    # Calls the view controller, defined in the annotation of the contact
+    # entity. This marks this route as belonging to this entity type.
+    _entity_view: 'advertiser'
+    _title: 'Advertiser content'
+  requirements:
+    # Calls the access controller of the entity, passing in the suffix ('view')
+    # as the $operation parameter to checkAccess().
+    _entity_access: 'advertiser.view'
+
+entity.advertiser.collection:
+  path: '/advertiser/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the contact entity.
+    _entity_list: 'advertiser'
+    _title: 'Advertiser list'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'view contact entity'
+
+advertiser.contact_add:
+  path: '/advertiser/add'
+  defaults:
+    # Calls the form.add controller, defined in the contact entity.
+    _entity_form: advertiser.default
+    _title: 'Add contact'
+  requirements:
+    # Use the entity's access controller. _entity_create_access tells the router
+    # to use the access controller's checkCreateAccess() method instead of
+    # checkAccess().
+    _entity_create_access: 'advertiser'
+
+entity.advertiser.edit_form:
+  path: '/advertiser/{advertiser}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the contact entity.
+    _entity_form: advertiser.default
+    _title: 'Edit contact'
+  requirements:
+    # Calls the access controller of the entity, passing in the suffix
+    # ('update') as the $operation parameter to checkAccess().
+    _entity_access: 'advertiser.update'
+
+entity.advertiser.delete_form:
+  path: '/advertiser/{advertiser}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the contact entity.
+    _entity_form: advertiser.delete
+    _title: 'Delete Advertiser'
+  requirements:
+    # Calls the access controller of the entity, passing in the suffix
+    # ('delete') as the $operation parameter to checkAccess().
+    _entity_access: 'advertiser.delete'
+
+advertiser.advertiser_settings:
+  path: '/admin/structure/advertiser/settings'
+  defaults:
+    _form: '\Drupal\example_module\Form\ContactSettingsForm'
+    _title: 'Contact settings'
+  requirements:
+    _permission: 'administer contact entity'
