@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\example_module;
+namespace Drupal\drupal10_custom_module;
 
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\user\EntityOwnerInterface;
