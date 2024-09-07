@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\example_module\Plugin\rest\resource;
+namespace Drupal\drupal10_custom_module\Plugin\rest\resource;
 
 use Drupal\rest\ModifiedResourceResponse;
 use Drupal\rest\Plugin\ResourceBase;
