@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\example_module\Form;
+namespace Drupal\drupal10_custom_module\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
