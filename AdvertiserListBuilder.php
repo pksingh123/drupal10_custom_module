@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\example_module\Entity\Controller;
+namespace Drupal\drupal10_custom_module\Entity\Controller;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
