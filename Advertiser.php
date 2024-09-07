@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\example_module\Entity;
+namespace Drupal\drupal10_custom_module\Entity;
 
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
