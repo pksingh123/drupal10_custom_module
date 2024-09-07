@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\example_module;
+namespace Drupal\drupal10_custom_module;
 
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityAccessControlHandler;
